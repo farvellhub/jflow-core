@@ -3,14 +3,14 @@
 export default class Parallax {
 
     // HTMLElement, dir 1 = up | -1 = down, minOffset in pixels to active scroll
-    constructor( target, direction = 1, minOffset = 0 ) {
-        this.target = document.getElementById( target );
+    constructor( config ) {
+        this.target = document.getElementById( config["target"] );
         
-        this. direction = direction;
-        this.minOffset = minOffset;
+        this. direction = config["direction"];
+        this.minOffset = config["offset"] ? config["offset"] : 0;
 
         // Need updates movement at restart
-        // Prevents charging scroll in other position
+        // Prevents charging scroll at re-render position
         this._updateMovement();
 
         // Return listen to move scroll

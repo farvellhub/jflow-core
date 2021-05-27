@@ -6,9 +6,14 @@ module.exports = class Lightbox {
     // fetching data classes to control lightbox
     constructor( data ) {
         
-        // Initializing data objects
+        // Initializing data object
         this._constructData( data );
-        this._constructHandler( data["animation"] );
+
+        // Initializing handler
+        this.handler = new LightboxHandler({
+            element: "lightbox",
+            css: data["css"]
+        });
 
         // Init roullette of images
         this._initRoullette();
@@ -21,25 +26,22 @@ module.exports = class Lightbox {
         }));
     }
 
-    // Setting HTMLElements
+    // Setting lightbox properties
     _constructData( data ) {
         this.images = document.querySelectorAll( data["images"] );
         this.texts = document.querySelectorAll( data["texts"] );
 
         this.lightbox = {
-            photo: document.getElementById( data["photo"] ),
-            caption: document.getElementById( data["caption"] ),
+            photo: document.getElementById( "lighbox-photo" ),
+            caption: document.getElementById( "lightbox-caption" ),
         };
 
         this.roullette = {
-            img: document.getElementById( data["roullette"] ),
+            img: document.getElementById( "lightbox-roullette" ),
             txt: []
         };
-    }
 
-    // Setting conditional buttons
-    _constructHandler( animation ) {
-        this.handler = new LightboxHandler( animation );
+        this.control = ".lightbox-control";
         this.exit = "lightbox-close";
         this.conditions = {
             roullette: "roullette-image",
@@ -57,7 +59,7 @@ module.exports = class Lightbox {
 
             // Reset image element to lightbox css classes
             image.classList.remove( ...image.classList );
-            image.classList.add( "roullette-image", "lightbox-control" );
+            image.classList.add( "roullette-image", this.control );
 
             // Pushing images to roullete
             this.roullette.img.appendChild( image );
@@ -163,8 +165,10 @@ module.exports = class Lightbox {
     }
 
     // Listener handler
-    listen() {
+    async listen() {
         this.handler.setAfterFunc( this._update, this ); 
-        return this.handler.onClick( ".lightbox-control", this.conditions ); 
+        return this.handler.onClick( this.control, this.conditions ).then();
+
+        // listen().then();
     }
 }

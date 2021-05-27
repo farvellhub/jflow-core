@@ -52,7 +52,7 @@ module.exports = class LightboxHandler {
         return this;
     }
 
-    // Only update animation if its condition return true
+    // Only update animation if its condition returns true
     _isConditioned( conditions ) {
         if ( conditions === null ) return false;
             
@@ -98,7 +98,7 @@ module.exports = class LightboxHandler {
     lastClicked() { return this.lastClick; }
 
     // Each click updates lastClick variable 
-    onClick( controls, conditions ) {
+    async onClick( controls, conditions ) {
         const keys = document.querySelectorAll( controls );
 
         keys.forEach(( e, i ) => {

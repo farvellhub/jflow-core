@@ -4,6 +4,7 @@ module.exports = class Handler {
 
     // Animation { element: idName, css: className || [className] }
     constructor( ...animations ) {
+        
         this.animations = [];
         this._initAnimations( animations );
 
@@ -15,8 +16,6 @@ module.exports = class Handler {
             onScroll: this.onScroll.bind( this )
 
         }));
-
-        const initP
     }
 
     // Setting animations object and css array
@@ -54,7 +53,7 @@ module.exports = class Handler {
     }
 
     // Timeout event, animate given time
-    onTimeout( time ) {
+    async onTimeout( time ) {
         setTimeout(() => {
             this._animate(); 
         }, time);
@@ -63,7 +62,7 @@ module.exports = class Handler {
     }
 
     // Click event triggers animation
-    onClick( controls ) {
+    async onClick( controls ) {
         const keys = document.querySelectorAll( `.${controls}` );
 
         keys.forEach(( e ) => {
@@ -86,7 +85,7 @@ module.exports = class Handler {
     }
 
     // Scroll event triggers animation
-    onScroll( offset ) {
+    async onScroll( offset ) {
         let scrolled = this._initScroll( offset );
 
         document.addEventListener("scroll", () => {

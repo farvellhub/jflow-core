@@ -4,5 +4,13 @@
   "description": "npm package that exports jflow-js api",
   "main": "index.js",
   "author": "Farvell",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/farvellmaster/jflow-js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/farvellmaster/jflow-js/issues"
+  },
+  "homepage": "https://github.com/farvellmaster/jflow-js#readme"
 }

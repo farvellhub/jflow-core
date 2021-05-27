@@ -102,7 +102,21 @@ npm install jflow-core
 
 ```
 
-#
+### The way you initialize main method and call all handle functions:
+
+* All behaviours / handlers must be wrapped into a function.
+
+```javascript
+
+    // Main method
+    window.addEventListener("load", () => {
+        initLogicApp()
+            .then( initSomeMenu() )
+            .then( initWebPageHome() )
+            .then( () => console.log( "And you are ready to use JFlow!" ) )
+    })
+
+```
 
 Questions?
 ----------

@@ -33,7 +33,7 @@ export default class Parallax {
     }
 
     // Event handler for scroll
-    listen() {
+    async listen() {
         window.addEventListener("scroll", () => {
             this._updateMovement();
         });

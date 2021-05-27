@@ -1,0 +1,8 @@
+{
+  "name": "jflow-js",
+  "version": "1.0.0",
+  "description": "npm package that exports jflow-js api",
+  "main": "index.js",
+  "author": "Farvell",
+  "license": "MIT"
+}

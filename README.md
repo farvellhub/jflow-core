@@ -66,7 +66,7 @@ npm install @farvell/jflow-core
     });
 
     // starts event listener
-    htmlElement.listen();
+    return htmlElement.listen();
 
 ```
 
@@ -111,6 +111,8 @@ npm install @farvell/jflow-core
         texts: ".grid-caption",
         css: [ "disappear", "appear" ]
     });
+    
+    return lightbox.listen();
 
 ```
 
@@ -124,9 +126,11 @@ npm install @farvell/jflow-core
     window.addEventListener("load", () => {
         initLogicApp()
             .then( initSomeMenu() )
-            .then( initWebPageHome() )
-            .then( () => console.log( "And you are ready to use JFlow!" ) )
-    })
+            .then( initLightbox() )
+            .then( 
+                () => console.log( "And you are ready to use JFlow!" ) 
+             );
+    });
 
 ```
 

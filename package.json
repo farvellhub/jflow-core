@@ -1,5 +1,5 @@
 {
-  "name": "jflow-core",
+  "name": "@farvell/jflow-core",
   "version": "1.0.0",
   "description": "npm package that exports jflow-js api",
   "main": "index.js",
@@ -12,5 +12,8 @@
   "bugs": {
     "url": "https://github.com/farvellmaster/jflow-js/issues"
   },
-  "homepage": "https://github.com/farvellmaster/jflow-js#readme"
+  "homepage": "https://github.com/farvellmaster/jflow-js#readme",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

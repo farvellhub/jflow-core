@@ -1,14 +1,14 @@
 # JFlow-Core Documentation
-### A NPM package that exports jflow-js classes to your project.
+### A NPM package that exports jflow-core classes to your project.
 
 # Where to start:
 
 ```bash
-npm install jflow-core
+npm install @farvell/jflow-core
 ```
 # Custom Build Examples
 
-### To create a custom handle event:
+### Create a custom Handle object:
 
 ```javascript
 
@@ -54,7 +54,7 @@ npm install jflow-core
     });
 
     // starts event listener
-    hmtlElement.listen();
+    htmlElement.listen();
 
 ```
 

@@ -1,5 +1,5 @@
 {
-  "name": "jflow-js",
+  "name": "jflow-core",
   "version": "1.0.0",
   "description": "npm package that exports jflow-js api",
   "main": "index.js",

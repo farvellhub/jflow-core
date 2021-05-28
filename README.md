@@ -6,6 +6,18 @@
 ```bash
 npm install @farvell/jflow-core
 ```
+
+* Import constructor objects
+```javascript
+
+    const { 
+        Handle, 
+        Lightbox, 
+        Parallax 
+        
+    } = require( "@farvell/jflow-core" );
+    
+```
 # Custom Build Examples
 
 ### Create a custom Handle object:

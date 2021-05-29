@@ -9,6 +9,20 @@ npm install @farvell/jflow-core
 
 # The way you will work with:
 
+* Import constructor objects, when needed.
+
+```javascript
+
+    const { 
+
+        Handle, 
+        Lightbox, 
+        Parallax 
+        
+    } = require( "@farvell/jflow-core" );
+
+```
+
 ```javascript
 
     const behaviour = () => {
@@ -20,31 +34,45 @@ npm install @farvell/jflow-core
         // Returns a promise, don't blocks execution
         return object.listener( controlParams );
     }
+
 ```
 
-* Import constructor objects
+### The way you initialize main method and call all handle functions:
+
+* All behaviours / handlers must be wrapped into a function and return a listener.
 
 ```javascript
 
-    const { 
-        Handle, 
-        Lightbox, 
-        Parallax 
-        
-    } = require( "@farvell/jflow-core" );
+    // Main method
+    window.addEventListener("load", () => {
+        initLogicApp()
+            .then( initSomeMenu() )
+            .then( initLightbox() )
+            .then( 
+                console.log( "And you are ready to use JFlow!" ) 
+             );
+    });
 
 ```
+
+
 # Custom Build Examples
 
 ### Create a custom Handle object:
 
+* Can pass multiple config objects for trigger it at the same time.
+
 ```javascript
 
-    // Object constructor waits for 
-    // element id and css className
+    // Object constructor waits for objects
+    // with element id and css className
     const htmlElement = new Handler({
-        element: "idString",
+        element: "idString1",
         css: [ "className1", "className2" ]
+    },
+    {
+        element: "idString2",
+        css: "uniqueAnimation"
     });
 
 ```
@@ -75,6 +103,7 @@ npm install @farvell/jflow-core
 
     // direction can be negative
     // offset specifies minOffset to trigger
+    // can ba multiple objects
     const htmlElement = new Parallax({
         target: "targetId",
         direction: -1.2,
@@ -132,23 +161,7 @@ npm install @farvell/jflow-core
 
 ```
 
-### The way you initialize main method and call all handle functions:
 
-* All behaviours / handlers must be wrapped into a function and return a listener.
-
-```javascript
-
-    // Main method
-    window.addEventListener("load", () => {
-        initLogicApp()
-            .then( initSomeMenu() )
-            .then( initLightbox() )
-            .then( 
-                () => console.log( "And you are ready to use JFlow!" ) 
-             );
-    });
-
-```
 
 Questions?
 ----------

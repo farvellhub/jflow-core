@@ -2,7 +2,7 @@
 
 module.exports = class LightboxHandler {
 
-    // Animation { element: idName, css: className || [className] }
+    // ... Animation { element: idName, css: className || [className] }
     constructor( ...animations ) {
 
         // Init array of animations.
@@ -21,24 +21,26 @@ module.exports = class LightboxHandler {
 
     // Setting animations object and css array
     _initAnimations( animations ) {
-        animations.forEach(( a, i ) => {
+        animations.forEach(( a ) => {
             this.animations.push({
                 element: document.getElementById( a.element ),
                 css: Array.isArray( a.css ) ? a.css : [ a.css ]
-            } );
-
-            this._setDefaultAnimation( i );
+            });
         });
+        
+        this._setDefaultAnimation();
+        
     }
 
-    // If css provided is not an array
-    _setDefaultAnimation( index ) {
-        const animation = this.animations[ index ],
-            element = animation.element,
-            css = animation.css;
+    // If css provided is an array
+    _setDefaultAnimation() {
+        if ( this.animations.length > 1 ) {
+            const animation = this.animations[0],
+                element = animation.element,
+                css = animation.css
 
-        if ( css.length > 1 )
             this._animateByCss( element, css[0] );
+        }
     }
 
     // Needs for logic in Lightbox, controls roullette updates

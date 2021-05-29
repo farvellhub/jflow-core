@@ -1,6 +1,6 @@
 /* Parallax movement */
 
-export default class Parallax {
+module.exports = class Parallax {
 
     // HTMLElement, dir 1 = up | -1 = down, minOffset in pixels to active scroll
     constructor( config ) {

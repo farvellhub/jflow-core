@@ -4,7 +4,23 @@
 # Where to start:
 
 ```bash
-npm install jflow-core
+npm install @farvell/jflow-core
+```
+
+# The way you will work with:
+
+```javascript
+
+    const behaviour = () => {
+        // Get constructor object
+        const object = new JFlow({
+            configParam: "this is a config param"
+        })
+
+        // Returns a promise, don't blocks execution
+        return object.listener( controlParams );
+    }
+
 ```
 # Custom Build Examples
 
@@ -92,8 +108,8 @@ npm install jflow-core
 
 ```javascript
 
-    // Only pass your html references
-    // and css class animations
+    // Only pass your image css class
+    // and captions associated to it
     const lightbox = new Lightbox({
         images: ".grid-image",
         texts: ".grid-caption",
@@ -104,7 +120,7 @@ npm install jflow-core
 
 ### The way you initialize main method and call all handle functions:
 
-* All behaviours / handlers must be wrapped into a function.
+* All behaviours / handlers must be wrapped into a function and return a listener.
 
 ```javascript
 

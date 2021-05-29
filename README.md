@@ -20,9 +20,10 @@ npm install @farvell/jflow-core
         // Returns a promise, don't blocks execution
         return object.listener( controlParams );
     }
+```
 
-=======
 * Import constructor objects
+
 ```javascript
 
     const { 
@@ -31,8 +32,7 @@ npm install @farvell/jflow-core
         Parallax 
         
     } = require( "@farvell/jflow-core" );
-    
->>>>>>> cbb3948eba1b8ab1fded0143ccee856371590d06
+
 ```
 # Custom Build Examples
 

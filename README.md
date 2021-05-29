@@ -1,5 +1,5 @@
 # JFlow-Core Documentation
-### A NPM package that exports jflow-js classes to your project.
+### A NPM package that exports jflow-core classes to your project.
 
 # Where to start:
 
@@ -21,10 +21,22 @@ npm install @farvell/jflow-core
         return object.listener( controlParams );
     }
 
+=======
+* Import constructor objects
+```javascript
+
+    const { 
+        Handle, 
+        Lightbox, 
+        Parallax 
+        
+    } = require( "@farvell/jflow-core" );
+    
+>>>>>>> cbb3948eba1b8ab1fded0143ccee856371590d06
 ```
 # Custom Build Examples
 
-### To create a custom handle event:
+### Create a custom Handle object:
 
 ```javascript
 
@@ -70,7 +82,7 @@ npm install @farvell/jflow-core
     });
 
     // starts event listener
-    hmtlElement.listen();
+    return htmlElement.listen();
 
 ```
 
@@ -115,6 +127,8 @@ npm install @farvell/jflow-core
         texts: ".grid-caption",
         css: [ "disappear", "appear" ]
     });
+    
+    return lightbox.listen();
 
 ```
 
@@ -128,9 +142,11 @@ npm install @farvell/jflow-core
     window.addEventListener("load", () => {
         initLogicApp()
             .then( initSomeMenu() )
-            .then( initWebPageHome() )
-            .then( () => console.log( "And you are ready to use JFlow!" ) )
-    })
+            .then( initLightbox() )
+            .then( 
+                () => console.log( "And you are ready to use JFlow!" ) 
+             );
+    });
 
 ```
 

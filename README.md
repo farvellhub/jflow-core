@@ -91,9 +91,9 @@ npm install @farvell/jflow-core
     return htmlElement.onTimeout( time );
 
     // Scroll event
-    const direction = 1, offset = 100;
+    const offsetToTrigger = 100;
     // direction moves target on Y exe;
-    return htmlElement.onScroll( "targetId", -direction, offset  )
+    return htmlElement.onScroll( offsetToTrigger  )
 
 ```
 

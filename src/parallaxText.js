@@ -21,35 +21,40 @@ module.exports = class Parallax {
     }
 
     _initConfig( config ) {
-        config.forEach(( value ) => {
+        config.forEach(( parallax ) => {
             this.config.push({
-                target: document.getElementById( value.target ),
-                direction: value.direction,
-                offset: (value.offset ? value.offset : 0)
-            })
+                target: document.getElementById( parallax.target ),
+                direction: parallax.direction,
+                offset: ( parallax.offset ? value.offset : 0 )
+            });
         });
     }
 
     // Updates movement relative on direction and offset
-    _updateMovement() {
-        const offset = window.scrollY;
-
+    _updateMovement( offset = window.scrollY ) {
         // For each parallax configuration object
         this.config.forEach(( value ) => {
             const style = value.target.style,
                 movement = ( offset - value.offset ) * value.direction;
 
             // Only executes if offset arrives to minOffset
-                if ( offset > value.offset ) 
-                    style.transform = `translateY( ${ movement }px)`;
+            if ( offset >= value.offset )
+                style.transform = `translateY( ${ movement }px)`;
         });
+    }
+
+    _render( offset ) {
+        window.requestAnimationFrame(() => {
+            this._updateMovement( offset );
+        })
     }
 
     // Event handler for scroll
     async listen() {
         window.addEventListener("scroll", () => {
-            this._updateMovement();
+            const offset = window.scrollY;
+            this._render( offset );
         });
     }
-
+    
 }

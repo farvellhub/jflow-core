@@ -15,7 +15,7 @@ npm install @farvell/jflow-core
 
     const { 
 
-        Handle, 
+        Handler, 
         Lightbox, 
         Parallax 
         
@@ -54,7 +54,6 @@ npm install @farvell/jflow-core
     });
 
 ```
-
 
 # Custom Build Examples
 
@@ -159,8 +158,6 @@ npm install @farvell/jflow-core
     return lightbox.listen();
 
 ```
-
-
 
 Questions?
 ----------

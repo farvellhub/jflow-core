@@ -156,7 +156,7 @@ npm install @farvell/jflow-core
 
 ```javascript
 
-    // Only pass your css aniumations class
+    // Only pass your css animations class
     // and captions associated to it
     const lightbox = new Lightbox({
         images: ".grid-image",

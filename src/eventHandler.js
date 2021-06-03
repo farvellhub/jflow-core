@@ -55,7 +55,6 @@ module.exports = class Handler {
     // Timeout event, animate given time
     async onTimeout( time ) {
         setTimeout(( e ) => {
-			e.stopPropagation();
             this._animate();
         }, time);
 
@@ -103,8 +102,6 @@ module.exports = class Handler {
         let scrolled = this._initScroll( offset );
 
         document.addEventListener("scroll", ( e ) => {
-			e.stopPropagation();
-
             const scroll = window.scrollY;
 			scrolled = this.triggerScroll( scroll, offset, scrolled );
         });

@@ -13,14 +13,14 @@ npm install @farvell/jflow-core
 
 ```javascript
 
-    const { 
+    import { 
 
         Handler,
 		Style,
         Lightbox, 
         Parallax,
         
-    } = require( "@farvell/jflow-core" );
+    } from "@farvell/jflow-core";
 
 ```
 

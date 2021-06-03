@@ -4,10 +4,13 @@ const LightboxHandler = require( "./lightboxHandler" );
 module.exports = class Lightbox {
 
     // fetching data classes to control lightbox
-    constructor( data ) {
+    constructor( config ) {
         
+		// Add Lightbox to DOM
+		this._createLightbox();
+
         // Initializing data object
-        this._constructData( data );
+        this._constructLightbox( config );
 
         // Initializing handler
         this.handler = new LightboxHandler({
@@ -26,8 +29,27 @@ module.exports = class Lightbox {
         }));
     }
 
+	_createLightbox() {
+		const body = document.getElementsByTagName( body );
+
+		body.innerHTML += `
+			<section id="lightbox">
+				<span class="lightbox-close lightbox-control">x</span>
+					
+				<figure>
+					<span class="previous-button lightbox-control"><</span>
+					<img id="lightbox-photo" src="#" alt="lightbox-main-photo">
+					<span class="next-button lightbox-control"><</span>
+				</figure>
+
+				<p id="lightbox-caption" class="caption"></p>
+				<nav id="lightbox-roullette" class="roullette"></nav>
+			</section>
+		`;
+	}
+
     // Setting lightbox properties
-    _constructData( data ) {
+    _constructLightbox( data ) {
         this.images = document.querySelectorAll( data["images"] );
         this.texts = document.querySelectorAll( data["texts"] );
 
@@ -77,7 +99,6 @@ module.exports = class Lightbox {
     // Update position ( certain positions are conditioned buttons )
     _setLastPosition( position ) { this.lastPosition = position; }
 
-    // Update between all conditioned buttons
     _updateFromAll( position ) {
         const photo = this.roullette.img.children,
             caption = this.roullette.txt;
@@ -153,7 +174,7 @@ module.exports = class Lightbox {
         this._setLastPosition( position );
     }
 
-    // Generic update handler
+    // Update state from all conditions
     _update() {
         
         const lastClick = this.handler.lastClicked(),
@@ -167,8 +188,7 @@ module.exports = class Lightbox {
     // Listener handler
     async listen() {
         this.handler.setAfterFunc( this._update, this ); 
-        return this.handler.onClick( this.control, this.conditions ).then();
-
-        // listen().then();
+        return this.handler.onClick( this.control, this.conditions )
+			.then( console.log( "Lightbox is working!" ) );
     }
 }

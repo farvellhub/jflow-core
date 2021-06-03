@@ -101,7 +101,7 @@ module.exports = class LightboxHandler {
 
     // Each click updates lastClick variable 
     async onClick( controls, conditions ) {
-        const keys = document.querySelectorAll( controls );
+        const keys = document.querySelectorAll( `.${controls}` );
 
         keys.forEach(( e, i ) => {
             e.addEventListener("click", () => {

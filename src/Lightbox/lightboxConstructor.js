@@ -23,7 +23,7 @@ module.exports = class LightboxConstructor {
 				img: document.getElementById( "lightbox-roullette" ),
 				txt: []
 			},
-			control: ".lightbox-control",
+			control: "lightbox-control",
         	exit: "lightbox-close",
         	conditions: {
            		roullette: "roullette-image",
@@ -36,7 +36,7 @@ module.exports = class LightboxConstructor {
 
 	// Putting lightbox html to DOM
 	_createLightbox() {
-		const body = document.getElementsByTagName( body );
+		const body = document.getElementsByTagName( "body" );
 
 		body.innerHTML += `
 			<section id="lightbox" class="fixed-wrapper lightbox-wrapper">

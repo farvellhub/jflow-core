@@ -53,7 +53,7 @@ module.exports = class Handler {
 
     // Timeout event, animate given time
     async onTimeout( time ) {
-        const timer = setTimeout(( e ) => {
+        const timer = setTimeout(() => {
             this._animate();
         }, time);
 		
@@ -64,8 +64,8 @@ module.exports = class Handler {
     async onClick( controls ) {
         const keys = document.querySelectorAll( `.${controls}` );
 
-        keys.forEach(() => {
-            e.addEventListener("click", ( e ) => {
+        keys.forEach(( trigger ) => {
+            trigger.addEventListener("click", ( e ) => {
 				e.stopPropagation();
                 this._animate();
             });
@@ -100,7 +100,7 @@ module.exports = class Handler {
     async onScroll( offset ) {
         let scrolled = this._initScroll( offset );
 
-        document.addEventListener("scroll", ( e ) => {
+        document.addEventListener("scroll", () => {
             const scroll = window.scrollY;
 			scrolled = this.triggerScroll( scroll, offset, scrolled );
         });

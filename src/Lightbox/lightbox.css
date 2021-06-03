@@ -82,7 +82,7 @@
 .lightbox {
 	width: 100vw;
 	height: 100vh;
-	background-color: rgba(29, 29, 29, 0.9);
+	background-color: #1d1d1d;
 }
 
 .lightbox-photo-wrapper {

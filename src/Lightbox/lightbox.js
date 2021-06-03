@@ -12,25 +12,21 @@ module.exports = class Lightbox {
         // Initializing handler
         this.handler = new LightboxHandler({
             element: "lightbox",
-            css: data["css"]
+            css: config.css
         });
 
         // Init roullette of images
         this._initRoullette();
 
         // Return listen lightbox
-        return Object.freeze(Object.create({
-
-            listen: this.listen.bind( this )
-            
-        }));
+        return this.listen();
     }
 
     // initializing roullette from fetched images
     _initRoullette() {
-        this.config.images.forEach(( e, i ) => {
-            const image = e.cloneNode(),
-                text = this.config.texts[ i ];
+        this.config.images.forEach(( img, index ) => {
+            const image = img.cloneNode(),
+                text = this.config.texts[ index ];
 
             // Reset image element to lightbox css classes
             image.classList.remove( ...image.classList );
@@ -56,8 +52,8 @@ module.exports = class Lightbox {
         const photo = this.config.roullette.img.children,
             caption = this.config.roullette.txt;
 
-        this._setPhoto( photo[ position ].src );
-        this._setCaption( caption[ position ] );
+        this._setPhoto( photo.position.src );
+        this._setCaption( caption.position );
     }
 
     // Update from previous button
@@ -106,7 +102,7 @@ module.exports = class Lightbox {
     _validUpdate ( classList, name ) {
         const conditions = this.config.conditions;
 
-        return classList.contains( conditions[ name ]);
+        return classList.contains( conditions.name );
     }
 
     // Route depending on position

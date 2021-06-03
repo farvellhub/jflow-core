@@ -148,7 +148,7 @@ npm install @farvell/jflow-core
 # Put this line on your html head:
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@farvell/jflow-core@2.0.4/src/Lightbox/lightbox.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@farvell/jflow-core@2.0.6/src/Lightbox/lightbox.css" />
 
 ```
 
@@ -156,14 +156,15 @@ npm install @farvell/jflow-core
 
     // Only pass your css animations class
     // and captions associated to it
-    const lightbox = new Lightbox({
-        images: ".grid-image",
-        texts: ".grid-caption",
-        css: [ "disappear", "appear" ],
-		color: "rgba( 0, 0, 0, 0.8 )" // optional
-    });
+	window.addEventListener("load", () => {
+		new Lightbox({
+        	images: ".grid-image",
+        	texts: ".grid-caption",
+        	css: [ "disappear", "appear" ],
+			color: "rgba( 0, 0, 0, 0.8 )" // optional
+    	});
+	});
     
-    return lightbox.listen();
 
 ```
 

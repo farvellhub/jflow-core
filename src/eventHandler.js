@@ -54,10 +54,10 @@ module.exports = class Handler {
 
     // Timeout event, animate given time
     async onTimeout( time ) {
-        setTimeout(( e ) => {
+        const timer = setTimeout(( e ) => {
             this._animate();
         }, time);
-
+		
         return this;
     }
 

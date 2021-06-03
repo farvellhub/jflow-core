@@ -1,6 +1,6 @@
 {
   "name": "@farvell/jflow-core",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "npm package that exports jflow-js api",
   "main": "index.js",
   "author": "Farvell",

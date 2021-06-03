@@ -5,6 +5,7 @@
 	color: #eef1ee;
 	transition: all 0.2s ease;
 }
+
 .button:hover {
 	color: #a8b7a8;
 }

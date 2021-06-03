@@ -23,5 +23,7 @@ module.exports = class Style {
 				element.style.key = this.styles.key;
 			});
 		});
+
+		return this.elements;
 	}
 }

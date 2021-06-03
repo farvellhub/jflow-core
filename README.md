@@ -115,26 +115,7 @@ npm install @farvell/jflow-core
 
 ### Create a custom Lightbox object
 
-* All id's and classNames are required! You can copy and paste.
-
-```html
-
-    <section id="lightbox">
-        <span class="lightbox-close lightbox-control">x</span>
-            
-        <figure>
-            <span class="previous-button lightbox-control"><</span>
-            <img id="lightbox-photo" src="#" alt="lightbox-main-photo">
-            <span class="next-button lightbox-control"><</span>
-        </figure>
-
-        <p id="lightbox-caption" class="caption"></p>
-        <nav id="lightbox-roullette" class="roullette"></nav>
-    </section>
-
-```
-
-* You must put lightbox-control class to trigger lightbox.
+* You must put lightbox-control class name to trigger lightbox. You can copy and paste.
 
 ```html
 
@@ -147,7 +128,7 @@ npm install @farvell/jflow-core
 
 ```javascript
 
-    // Only pass your image css class
+    // Only pass your css aniumations class
     // and captions associated to it
     const lightbox = new Lightbox({
         images: ".grid-image",

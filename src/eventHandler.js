@@ -54,8 +54,9 @@ module.exports = class Handler {
 
     // Timeout event, animate given time
     async onTimeout( time ) {
-        setTimeout(() => {
-            this._animate(); 
+        setTimeout(( e ) => {
+			e.stopPropagation();
+            this._animate();
         }, time);
 
         return this;
@@ -65,8 +66,9 @@ module.exports = class Handler {
     async onClick( controls ) {
         const keys = document.querySelectorAll( `.${controls}` );
 
-        keys.forEach(( e ) => {
-            e.addEventListener("click", () => {
+        keys.forEach(() => {
+            e.addEventListener("click", ( e ) => {
+				e.stopPropagation();
                 this._animate();
             });
         });
@@ -74,7 +76,19 @@ module.exports = class Handler {
         return this;
     }
 
-    // Given a offset 
+	// If Offset is inside conditions, animate
+	_triggerScroll( scroll, offset, scrolled ) {
+		if (( scroll <= offset && scrolled ) || 
+            ( scroll >= offset && !scrolled )) {
+                
+            this._animate();
+			return !scrolled;
+        }
+
+		return scrolled;
+	}
+
+    // Controls scroll when loads document
     _initScroll( offset ) {
         if ( window.scrollY >= offset ) {
             this._animate();
@@ -88,15 +102,11 @@ module.exports = class Handler {
     async onScroll( offset ) {
         let scrolled = this._initScroll( offset );
 
-        document.addEventListener("scroll", () => {
-            const scroll = window.scrollY;
+        document.addEventListener("scroll", ( e ) => {
+			e.stopPropagation();
 
-            if (( scroll <= offset && scrolled ) || 
-                ( scroll >= offset && !scrolled )) {
-                
-                scrolled  = !scrolled;
-                this._animate();
-            }
+            const scroll = window.scrollY;
+			scrolled = this.triggerScroll( scroll, offset, scrolled );
         });
 
         return this;

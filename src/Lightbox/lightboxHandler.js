@@ -1,5 +1,4 @@
 // Lightbox event handler 
-
 module.exports = class LightboxHandler {
 
     // ... Animation { element: idName, css: className || [className] }

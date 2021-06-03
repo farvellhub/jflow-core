@@ -1,5 +1,4 @@
 // Generic handler
-
 module.exports = class Handler {
 
     // Animation { element: idName, css: className || [className] }

@@ -40,7 +40,7 @@ npm install @farvell/jflow-core
 
 ### The way you initialize main method and call all handle functions:
 
-* All behaviours / handlers must be wrapped into a function and return a listener.
+* All behaviours / handlers must be wrapped inside a function.
 
 ```javascript
 
@@ -77,8 +77,6 @@ npm install @farvell/jflow-core
 
 ```
 
-# The constructed Handler object returns a list of methods for trigger events that returns a Promise not resolved.
-
 * Trigger events must be returned in a execution context.
 
 ```javascript
@@ -111,7 +109,7 @@ npm install @farvell/jflow-core
 		height: "100vh",
 		backgroundColor: "tomato"
 
-    }).setStyle( "htmlElements" );
+    }).setStyle( "htmlClassName" );
 
 ```
 
@@ -134,9 +132,9 @@ npm install @farvell/jflow-core
 
 ```
 
-### Create a custom Lightbox object
+### Create a custom Lightbox object:
 
-* You must put lightbox-control class name to trigger lightbox. You can copy and paste.
+* You must put lightbox-control class name to trigger lightbox.
 
 ```html
 
@@ -147,10 +145,10 @@ npm install @farvell/jflow-core
 
 ```
 
-# Link cdn on html head
+# Put this line on your html head:
 
-````
-	https://cdn.jsdelivr.net/gh/farvellmaster/jflow-core/Lightbox/lightbox.css
+```html
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@farvell/jflow-core@2.0.4/src/Lightbox/lightbox.css" />
 
 ```
 

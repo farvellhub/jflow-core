@@ -9,3 +9,10 @@ module.exports = {
     Lightbox,
     Parallax
 };
+
+export default {
+	Handler,
+	Style,
+	Lightbox,
+	Parallax
+};

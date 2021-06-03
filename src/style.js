@@ -1,5 +1,4 @@
 // Converts style objetcs into html props.
-
 module.exports = class Style {
 	constructor( styles ) {
 		// Object containig style keys

@@ -1,7 +1,6 @@
 const Style = require( "../style" );
 
 // Lightbox DOM constructor
-
 module.exports = class LightboxConstructor {
 	constructor( config ) {
 		this._createLightbox();

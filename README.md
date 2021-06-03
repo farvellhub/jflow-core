@@ -15,9 +15,10 @@ npm install @farvell/jflow-core
 
     const { 
 
-        Handler, 
+        Handler,
+		Style,
         Lightbox, 
-        Parallax 
+        Parallax,
         
     } = require( "@farvell/jflow-core" );
 
@@ -55,7 +56,7 @@ npm install @farvell/jflow-core
 
 ```
 
-# Custom Build Examples
+# Custom Build Examples.
 
 ### Create a custom Handle object:
 
@@ -76,7 +77,7 @@ npm install @farvell/jflow-core
 
 ```
 
-### The constructed Handler object returns a list of methods for trigger events that returns a Promise not resolved:
+# The constructed Handler object returns a list of methods for trigger events that returns a Promise not resolved.
 
 * Trigger events must be returned in a execution context.
 
@@ -94,6 +95,26 @@ npm install @farvell/jflow-core
     return htmlElement.onScroll( offsetToTrigger  )
 
 ```
+
+### Create a custom Style object:
+
+```javascript
+
+    // Set js styles with a className
+	// returns the array of elements
+    const styledElement = new Style({
+
+        display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		width: "100vw",
+		height: "100vh",
+		backgroundColor: "tomato"
+
+    }).setStyle( "htmlElements" );
+
+```
+
 
 ### Create a custom Parallax object
 
@@ -126,6 +147,13 @@ npm install @farvell/jflow-core
 
 ```
 
+# Link cdn on html head
+
+````
+	https://cdn.jsdelivr.net/gh/farvellmaster/jflow-core/Lightbox/lightbox.css
+
+```
+
 ```javascript
 
     // Only pass your css aniumations class
@@ -133,7 +161,8 @@ npm install @farvell/jflow-core
     const lightbox = new Lightbox({
         images: ".grid-image",
         texts: ".grid-caption",
-        css: [ "disappear", "appear" ]
+        css: [ "disappear", "appear" ],
+		color: "rgba( 0, 0, 0, 0.8 )" // optional
     });
     
     return lightbox.listen();

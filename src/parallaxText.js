@@ -19,6 +19,7 @@ module.exports = class Parallax {
         }));
     }
 
+	// Sets config params scroll direction, speed , offset
     _initConfig( config ) {
         config.forEach(( parallax ) => {
             this.config.push({
@@ -42,6 +43,7 @@ module.exports = class Parallax {
         });
     }
 
+	// Real scroll param with request Animation
     _render( offset ) {
         window.requestAnimationFrame(() => {
             this._updateMovement( offset );

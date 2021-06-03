@@ -19,24 +19,25 @@ module.exports = class Handler {
 
     // Setting animations object and css array
     _initAnimations( animations ) {
-        animations.forEach(( a, i ) => {
+        animations.forEach(( anim, index ) => {
             this.animations.push({
-                element: document.getElementById( a.element ),
-                css: Array.isArray( a.css ) ? a.css : [ a.css ]
+                element: document.getElementById( anim.element ),
+                css: Array.isArray( anim.css ) ? anim.css : [ anim.css ]
             });
 
-            this._setDefaultAnimation( i );
+            this._setDefaultAnimation( index );
         });
     }
 
     // If css provided is not an array
     _setDefaultAnimation( index ) {
-        const animation = this.animations[ index ],
-            element = animation.element,
-            css = animation.css;
+        if ( css.length > 1 ) {
+			const animation = this.animations[ index ],
+				element = animation.element,
+				css = animation.css;
 
-        if ( css.length > 1 )
             this._toggleAnimation( element, css[0] );
+		}
     }
 
     // Toggle class list item

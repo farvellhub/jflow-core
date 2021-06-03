@@ -1,12 +1,13 @@
+const Handler = require("../eventHandler");
+
 // Lightbox event handler 
-module.exports = class LightboxHandler {
+module.exports = class LightboxHandler extends Handler {
 
     // ... Animation { element: idName, css: className || [className] }
     constructor( ...animations ) {
 
-        // Init array of animations.
-        this.animations = [];
-        this._initAnimations( animations );
+        // Init animations.
+        super( animations );
 
         // Return function to Lightbox logic
         return Object.freeze(Object.create({
@@ -16,30 +17,6 @@ module.exports = class LightboxHandler {
             onClick: this.onClick.bind( this )
 
         }));
-    }
-
-    // Setting animations object and css array
-    _initAnimations( animations ) {
-        animations.forEach(( a ) => {
-            this.animations.push({
-                element: document.getElementById( a.element ),
-                css: Array.isArray( a.css ) ? a.css : [ a.css ]
-            });
-        });
-        
-        this._setDefaultAnimation();
-        
-    }
-
-    // If css provided is an array
-    _setDefaultAnimation() {
-        if ( this.animations.length > 1 ) {
-            const animation = this.animations[0],
-                element = animation.element,
-                css = animation.css
-
-            this._animateByCss( element, css[0] );
-        }
     }
 
     // Needs for logic in Lightbox, controls roullette updates
@@ -66,18 +43,6 @@ module.exports = class LightboxHandler {
         });
 
         return isConditioned;
-    }
-
-    // Toggle class list item
-    _toggleAnimation( element, css ) { element.classList.toggle( css ); }
-
-    // For each animation, animate
-    _animate() {
-        this.animations.forEach(( a ) => {
-            a.css.forEach(( c ) => {
-                this._toggleAnimation( a.element, c );
-            });        
-        });
     }
 
     // Controls if have conditions

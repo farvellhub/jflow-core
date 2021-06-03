@@ -36,9 +36,11 @@ module.exports = class LightboxConstructor {
 	// Putting lightbox html to DOM
 	_createLightbox() {
 		const wrapper = document.createElement( "section" );
+		
+		wrapper.setAttribute( "id", "lightbox" )
+			.setAttribute( "class", "fixed-wrapper lightbox-wrapper" );
 
-		wrapper.innerHTML += 
-		`<section id="lightbox" class="fixed-wrapper lightbox-wrapper">
+		wrapper.innerHTML += `
 			<span class="button fixed-button lightbox-close lightbox-control">x</span>
 
 			<section class="wrapper lightbox">

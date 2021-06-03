@@ -16,7 +16,7 @@ npm install @farvell/jflow-core
     import { 
 
         Handler,
-	Style,
+		Style,
         Lightbox, 
         Parallax,
         

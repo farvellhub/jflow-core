@@ -31,13 +31,11 @@ module.exports = class Handler {
 
     // If css provided is not an array
     _setDefaultAnimation( index ) {
-        if ( css.length > 1 ) {
-			const animation = this.animations[ index ],
-				element = animation.element,
-				css = animation.css;
+		const animation = this.animations[ index ],
+			element = animation.element,
+			css = animation.css;
 
-            this._toggleAnimation( element, css[0] );
-		}
+		if ( css.length > 1 ) this._toggleAnimation( element, css[0] );
     }
 
     // Toggle class list item

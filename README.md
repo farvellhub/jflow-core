@@ -16,7 +16,7 @@ npm install @farvell/jflow-core
     import { 
 
         Handler,
-		Style,
+	Style,
         Lightbox, 
         Parallax,
         
@@ -161,7 +161,7 @@ npm install @farvell/jflow-core
         	images: ".grid-image",
         	texts: ".grid-caption",
         	css: [ "disappear", "appear" ],
-			color: "rgba( 0, 0, 0, 0.8 )" // optional
+		color: "rgba( 0, 0, 0, 0.8 )" // optional
     	});
 	});
     

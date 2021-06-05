@@ -101,7 +101,7 @@ module.exports = class Handler {
 
 		document.addEventListener( "scroll", () => {
 			const scroll = window.scrollY;
-			scrolled = this.triggerScroll( scroll, offset, scrolled );
+			scrolled = this._triggerScroll( scroll, offset, scrolled );
 		});
 
 		return this;

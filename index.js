@@ -1,12 +1,10 @@
 // Import library with common.js
-const Handler = require( "./src/eventHandler" ),
-    Lightbox = require( "./src/Lightbox/lightbox" ),
-    Parallax = require( "./src/parallaxText" ),
+const Handler = require( "./src/handler" ),
+	Parallax = require( "./src/parallax" ),
 	Style = require( "./src/style" );
 
 module.exports = {
-    Handler,
+	Handler,
 	Style,
-    Lightbox,
-    Parallax
+	Parallax
 };

@@ -102,11 +102,11 @@ npm install @farvell/jflow-core
     const styledElement = new Style({
 
         display: "flex",
-		justifyContent: "center",
-		alignItems: "center",
-		width: "100vw",
-		height: "100vh",
-		backgroundColor: "tomato"
+	justifyContent: "center",
+	alignItems: "center",
+	width: "100vw",
+	height: "100vh",
+	backgroundColor: "tomato"
 
     }).setStyle( "htmlClassName" );
 

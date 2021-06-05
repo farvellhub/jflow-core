@@ -16,7 +16,7 @@ npm install @farvell/jflow-core
     import { 
 
         Handler,
-	Style,
+		Style,
         Lightbox, 
         Parallax,
         
@@ -132,44 +132,9 @@ npm install @farvell/jflow-core
 
 ```
 
-### Create a custom Lightbox object:
-
-* You must put lightbox-control class name to trigger lightbox.
-
-```html
-
-    <figure class="grid-container lightbox-control">
-        <img class="grid-image" src="images/port_01.jpg" alt="port_01">
-        <figcaption class="grid-caption">Lorem ipsum dolor sit amet.</figcaption>
-    </figure>
-
-```
-
-# Put this line on your html head:
-
-```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@farvell/jflow-core@2.0.6/src/Lightbox/lightbox.css" />
-
-```
-
-```javascript
-
-    // Only pass your css animations class
-    // and captions associated to it
-	window.addEventListener("load", () => {
-		new Lightbox({
-        	images: ".grid-image",
-        	texts: ".grid-caption",
-        	css: [ "disappear", "appear" ],
-		color: "rgba( 0, 0, 0, 0.8 )" // optional
-    	});
-	});
-    
-
-```
 
 Questions?
 ----------
 
-If you have any questions, please feel free to send me an email;
+If you have any questions, please feel free to contact me on discord Farvell⚡#3387.
 

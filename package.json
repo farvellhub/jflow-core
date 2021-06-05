@@ -1,16 +1,19 @@
 {
-  "name": "@farvell/jflow-core",
-  "version": "2.0.9",
-  "description": "npm package that exports jflow-js library",
-  "main": "index.js",
-  "author": "Farvell",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/farvellmaster/jflow-js.git"
-  },
-  "bugs": {
-    "url": "https://github.com/farvellmaster/jflow-js/issues"
-  },
-  "homepage": "https://github.com/farvellmaster/jflow-js#readme"
+	"name": "@farvell/jflow-core",
+	"version": "2.0.10",
+	"description": "npm package that exports jflow-core library",
+	"main": "index.js",
+	"author": "Farvell",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/farvellmaster/jflow-js.git"
+	},
+	"bugs": {
+		"url": "https://github.com/farvellmaster/jflow-js/issues"
+	},
+	"homepage": "https://github.com/farvellmaster/jflow-js#readme",
+	"devDependencies": {
+		"eslint": "^7.27.0"
+	}
 }

@@ -5,12 +5,11 @@ module.exports = class Style {
 		this.styles = styles;
 
 		// Return set styles
-		return Object.freeze(Object.create({
+		return Object.freeze( Object.create({
 
 			setStyles: this.setStyles.bind( this )
 
 		}));
-
 	}
 
 	// Set styles to targets clasName
@@ -18,11 +17,13 @@ module.exports = class Style {
 		this.elements = [ ...document.getElementsByClassName( className ) ];
 
 		this.elements.forEach(( element ) => {
-			Object.keys( this.styles ).forEach(( key ) => {
-				element.style.key = this.styles.key;
+			const props = Object.keys( this.styles );
+
+			props.forEach(( key ) => {
+				element.style.key = key;
 			});
 		});
 
 		return this.elements;
 	}
-}
+};

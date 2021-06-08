@@ -8,38 +8,13 @@
 
 > A NPM package that exports jflow-core classes to your project.
 
-## Installation
-
-- npm install
-
-## Directories
-
-· `/public/build`: Webpack bundle.
-
-· `/src/api`: Js modules.
-
-· `/src/styles`: Scss classes.
-
-· `/src/main.js`: Entry point.
-
-## Characteristics.
-
-· `Webpack5` as bundler.
-
-· `image post-procesing`.
-
-· `post-css` as SASS transpiler.
-
-· `babel7` as ES7 transpiler.
-
-
-# Where to start:
+## Where to start:
 
 ```bash
 npm install @farvell/jflow-core
 ```
 
-# The way you will work with:
+## The way you will work with:
 
 * Import constructor objects, when needed.
 
@@ -87,7 +62,7 @@ npm install @farvell/jflow-core
 
 ```
 
-# Custom Build Examples.
+## Custom Build Examples.
 
 ### Create a custom Handle object:
 

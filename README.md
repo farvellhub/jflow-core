@@ -4,6 +4,7 @@
   <a href="#" target="_blank">
     <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-green.svg" />
   </a>
+<a href="https://discord.gg/tpNtcJHw" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 </p>
 
 > A NPM package that exports jflow-core classes to your project.
@@ -16,7 +17,7 @@ npm install @farvell/jflow-core
 
 ## The way you will work with:
 
-* Import constructor objects, when needed.
+- Import constructor objects, when needed.
 
 ```javascript
 
@@ -46,7 +47,7 @@ npm install @farvell/jflow-core
 
 ### The way you initialize main method and call all handle functions:
 
-* All behaviours / handlers must be wrapped inside a function.
+- All behaviours / handlers must be wrapped inside a function.
 
 ```javascript
 
@@ -83,7 +84,7 @@ npm install @farvell/jflow-core
 
 ```
 
-* Trigger events must be returned in a execution context.
+- Trigger events must be returned in a execution context.
 
 ```javascript
 

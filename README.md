@@ -7,7 +7,7 @@
 <a href="https://discord.gg/tpNtcJHw" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 </p>
 
-> A NPM package that exports jflow-core classes to your project.
+> A NPM package that exports jflow-core classes and type declarations to your project.
 
 ## Where to start:
 
@@ -24,7 +24,7 @@ npm install @farvell/jflow-core
     import { 
 
         Handler,
-	Style,
+    Style,
         Parallax,
         
     } from "@farvell/jflow-core";
@@ -106,15 +106,15 @@ npm install @farvell/jflow-core
 ```javascript
 
     // Set js styles with a className
-	// returns the array of elements
+    // returns the array of elements
     const styledElement = new Style({
 
         display: "flex",
-	justifyContent: "center",
-	alignItems: "center",
-	width: "100vw",
-	height: "100vh",
-	backgroundColor: "tomato"
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100vw",
+    height: "100vh",
+    backgroundColor: "tomato"
 
     }).setStyle( "htmlClassName" );
 

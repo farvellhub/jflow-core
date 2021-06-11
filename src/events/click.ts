@@ -7,7 +7,7 @@ class Click {
         this.keys = [ ...document.querySelectorAll( `.${target}` ) ];
     }
 
-    async listen( ...states: State[]): Promise<void> {
+    async listen( states: State[]): Promise<void> {
         this.keys.forEach(( trigger: Element ) => {
             trigger.addEventListener( "click", ( e ) => {
                 e.stopPropagation();

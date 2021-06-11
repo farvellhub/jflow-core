@@ -8,7 +8,7 @@ class Time {
         this.#time = time;
     }
 
-    async once( ...states: State[]): Promise<void> {
+    async once( states: State[]): Promise<void> {
         setTimeout(() => {
             states.forEach(( state ) => {
                 state.toggleStates();
@@ -20,8 +20,8 @@ class Time {
         this.#interval = setInterval(() => {
             states.forEach(( state ) => {
                 state.toggleStates();
-            }, this.#time );
-        });
+            });
+        }, this.#time );
     }
 
     async clearLoop(): Promise<void> {

@@ -1,14 +1,15 @@
 import {
+    Animation,
     Parallax,
     ParserCss,
     State,
     Style
-} from "./animations/index";
+} from "./animations/";
 
 import {
     Render,
     Routing
-} from "./controller/index";
+} from "./controller/";
 
 import {
     Click,
@@ -16,10 +17,11 @@ import {
     Hover,
     Scroll,
     Time
-} from "./events/index";
+} from "./events/";
 
 
 export {
+    Animation,
     Parallax,
     ParserCss,
     State,

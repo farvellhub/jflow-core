@@ -1,5 +1,6 @@
 import Animation from "./animation";
 
+
 // Trigger animation state
 class State {
     #element: HTMLElement;

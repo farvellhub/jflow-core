@@ -16,18 +16,17 @@ class Scroll {
     }
 
     private controlScroll(): boolean {
-
+        return (( this.#scroll <= this.#offset && this.#isActive )
+            || ( this.#scroll >= this.#offset && !this.#isActive ));
     }
 
     async listen( ...states: State[]): Promise<void> {
         document.addEventListener( "scroll", () => {
-            if (( scroll <= offset && scrolled ) ||
-            ( scroll >= offset && !scrolled )) {
-
+            if ( this.controlScroll()) {
                 states.forEach(( state ) => {
                     state.toggleStates();
                 });
-                return !scrolled;
+                this.#isActive = !this.#isActive;
             }
         });
     }

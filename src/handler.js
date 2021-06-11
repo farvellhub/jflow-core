@@ -29,82 +29,82 @@ module.exports = class Handler {
         });
     }
 
-    // If css provided is an array
-    _setDefaultAnimation( index ) {
-        const animation = this.animations[ index ],
-            element = animation.element,
-            css = animation.css;
+    // // If css provided is an array
+    // _setDefaultAnimation( index ) {
+    //     const animation = this.animations[ index ],
+    //         element = animation.element,
+    //         css = animation.css;
 
-        if ( css.length > 1 ) this._toggleAnimation( element, css[ 0 ]);
-    }
+    //     if ( css.length > 1 ) this._toggleAnimation( element, css[ 0 ]);
+    // }
 
-    // Toggle class list item
-    _toggleAnimation( element, css ) { element.classList.toggle( css ); }
+    // // Toggle class list item
+    // _toggleAnimation( element, css ) { element.classList.toggle( css ); }
 
-    // For each animation, animate
-    _animate() {
-        this.animations.forEach(( animation ) => {
-            animation.css.forEach(( cssName ) => {
-                this._toggleAnimation( animation.element, cssName );
-            });
-        });
-    }
+    // // For each animation, animate
+    // _animate() {
+    //     this.animations.forEach(( animation ) => {
+    //         animation.css.forEach(( cssName ) => {
+    //             this._toggleAnimation( animation.element, cssName );
+    //         });
+    //     });
+    // }
 
-    // Timeout event, animate given time
-    async onTimeout( time ) {
-        setTimeout(() => {
-            this._animate();
-        }, time );
+    // // Timeout event, animate given time
+    // async onTimeout( time ) {
+    //     setTimeout(() => {
+    //         this._animate();
+    //     }, time );
 
-        return this;
-    }
+    //     return this;
+    // }
 
-    // Click event triggers animation
-    async onClick( controls ) {
-        const keys = document.querySelectorAll( `.${controls}` );
+    // // Click event triggers animation
+    // async onClick( controls ) {
+    //     const keys = document.querySelectorAll( `.${controls}` );
 
-        keys.forEach(( trigger ) => {
-            trigger.addEventListener( "click", ( e ) => {
-                e.stopPropagation();
-                this._animate();
-            });
-        });
+    //     keys.forEach(( trigger ) => {
+    //         trigger.addEventListener( "click", ( e ) => {
+    //             e.stopPropagation();
+    //             this._animate();
+    //         });
+    //     });
 
-        return this;
-    }
+    //     return this;
+    // }
 
-    // If Offset is inside conditions, animate
-    _triggerScroll( scroll, offset, scrolled ) {
-        if (( scroll <= offset && scrolled ) ||
-            ( scroll >= offset && !scrolled )) {
+    // // If Offset is inside conditions, animate
+    // _triggerScroll( scroll, offset, scrolled ) {
+    //     if (( scroll <= offset && scrolled ) ||
+    //         ( scroll >= offset && !scrolled )) {
 
-            this._animate();
-            return !scrolled;
-        }
+    //         this._animate();
+    //         return !scrolled;
+    //     }
 
-        return scrolled;
-    }
+    //     return scrolled;
+    // }
 
-    // Controls scroll when loads document
-    _initScroll( offset ) {
-        if ( window.scrollY >= offset ) {
-            this._animate();
-            return true;
-        }
+    // // Controls scroll when loads document
+    // _initScroll( offset ) {
+    //     if ( window.scrollY >= offset ) {
+    //         this._animate();
+    //         return true;
+    //     }
 
-        return false;
-    }
+    //     return false;
+    // }
 
-    // Scroll event triggers animation
-    async onScroll( offset ) {
-        let scrolled = this._initScroll( offset );
+    // // Scroll event triggers animation
+    // async onScroll( offset ) {
+    //     let scrolled = this._initScroll( offset );
 
-        document.addEventListener( "scroll", () => {
-            const scroll = window.scrollY;
-            scrolled = this._triggerScroll( scroll, offset, scrolled );
-        });
+    //     document.addEventListener( "scroll", () => {
+    //         const scroll = window.scrollY;
+    //         scrolled = this._triggerScroll( scroll, offset, scrolled );
+    //     });
 
-        return this;
-    }
+    //     return this;
+    // }
 
 };

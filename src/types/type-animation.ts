@@ -1,6 +1,6 @@
 declare type TypeAnimation = {
-    element: string | HTMLElement;
-    classes: string[] | string;
+    element: string;
+    css: string[] | string;
     init?: number;
 }
 

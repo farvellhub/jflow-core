@@ -17,9 +17,7 @@ class Parallax {
         config.forEach(( param: TypeParallax ) => {
             const { target, direction, offset } = param;
             this.#config.push({
-                target: ( !( target instanceof HTMLElement ))
-                    ? document.getElementById( target ) as HTMLElement
-                    : target,
+                target: document.getElementById( target as string ) as HTMLElement,
                 direction: ( direction > -2 && direction < 2 )
                     ? direction
                     : 0,

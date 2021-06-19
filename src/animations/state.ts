@@ -6,30 +6,21 @@ class State {
     #element: HTMLElement;
     #states: string[];
 
-    constructor({ element, classes, init }: TypeAnimation ) {
+    constructor({ element, css, init }: TypeAnimation ) {
         this.#element = this.initElement( element );
-        this.#states = this.initStates( classes );
+        this.#states = this.initStates( css );
         
         this.setInitialState( init as number );
     }
 
-    private initElement( element: string | HTMLElement ): HTMLElement {
-        let temp: HTMLElement | null;
-
-        if ( !( element instanceof HTMLElement )) {
-            temp = document.createElement( "div" );
-            temp.setAttribute( "id", element as string );
-            document.body.prepend( temp );
-        
-        } else { temp = document.getElementById( `${element}` ); }
-         
-        return temp as HTMLElement;
+    private initElement( element: string ): HTMLElement {
+        return document.getElementById( `${element}` ) as HTMLElement;
     }
 
-    private initStates( classes: string[] | string ): string[] {
-        return ( Array.isArray( classes ))
-            ? classes
-            : [ classes ];
+    private initStates( css: string[] | string ): string[] {
+        return ( Array.isArray( css ))
+            ? css
+            : [ css ];
     }
 
     private setInitialState( index: number ): void {
@@ -52,6 +43,6 @@ export default State;
 
 //     new State({
 //         element: "animable",
-//         classes: ["stateOn", "stateOff"],
+//         css: ["stateOn", "stateOff"],
 //         init: 0
 //     })

@@ -1,0 +1,24 @@
+{
+    "name": "@farvell/jflow-core",
+    "version": "3.0.2",
+    "description": "npm package that exports jflow-core library",
+    "author": "Farvell",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/farvellmaster/jflow-core.git"
+    },
+    "bugs": {
+        "url": "https://github.com/farvellmaster/jflow-core/issues"
+    },
+    "homepage": "https://github.com/farvellmaster/jflow-core#readme",
+    "main": "index.ts",
+    "typings": "index.d.ts",
+    "files": [
+        "package"
+    ],
+    "engines": {
+        "node": ">=14"
+    },
+    "module": "jflow-core-tsc.esm.js"
+}

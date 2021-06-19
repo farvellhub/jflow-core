@@ -12,11 +12,10 @@
         "url": "https://github.com/farvellmaster/jflow-core/issues"
     },
     "homepage": "https://github.com/farvellmaster/jflow-core#readme",
-    "main": "src/index.ts",
+    "main": "package/index.ts",
     "typings": "dist/indexjflow.d.ts",
     "files": [
-        "dist",
-        "src"
+        "package"
     ],
     "engines": {
         "node": ">=14"

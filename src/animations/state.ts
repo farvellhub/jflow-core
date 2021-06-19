@@ -1,4 +1,4 @@
-import Animation from "./animation";
+import TypeAnimation from "../types/type-animation";
 
 
 // Trigger animation state
@@ -6,22 +6,24 @@ class State {
     #element: HTMLElement;
     #states: string[];
 
-    constructor({ element, classes, init }: Animation ) {
+    constructor({ element, classes, init }: TypeAnimation ) {
         this.#element = this.initElement( element );
         this.#states = this.initStates( classes );
         
-        this.setInitialState( init );
+        this.setInitialState( init as number );
     }
 
-    private initElement( element: string ): HTMLElement {
-        let temp: HTMLElement = document.getElementById( element );
+    private initElement( element: string | HTMLElement ): HTMLElement {
+        let temp: HTMLElement | null;
 
-        if ( typeof temp === null ) {
+        if ( !( element instanceof HTMLElement )) {
             temp = document.createElement( "div" );
-            temp.setAttribute( "id", element );
-        }
+            temp.setAttribute( "id", element as string );
+            document.body.prepend( temp );
+        
+        } else { temp = document.getElementById( `${element}` ); }
          
-        return temp;
+        return temp as HTMLElement;
     }
 
     private initStates( classes: string[] | string ): string[] {

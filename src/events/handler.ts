@@ -5,13 +5,12 @@ import {
 
 import {
     Click,
-    Hover,
     Scroll,
     Time
 } from "./";
 
 class Handler {
-    #states: State[];
+    #states: Array<State> = [];
     
     constructor( ...animations: Animation[]) {
         animations.forEach(( animation ) => {
@@ -31,6 +30,10 @@ class Handler {
 
     public async onTimeout( time: number ): Promise<void> {
         return await new Time( time ).once( this.#states );
+    }
+
+    public async onScroll( offset: number ): Promise<void> {
+        return await new Scroll( offset ).listen( this.#states );
     }
 }
 

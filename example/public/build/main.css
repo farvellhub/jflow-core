@@ -1,0 +1,337 @@
+@import url(https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap);
+.rotateRight {
+  -webkit-animation: rotateRight 0.3s ease;
+          animation: rotateRight 0.3s ease;
+  transform: rotate(90deg);
+}
+
+@-webkit-keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+
+@keyframes rotateRight {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
+  }
+}
+.unrotateRight {
+  -webkit-animation: unrotateRight 0.3s ease;
+          animation: unrotateRight 0.3s ease;
+  transform: rotate(0deg);
+}
+
+@-webkit-keyframes unrotateRight {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes unrotateRight {
+  0% {
+    transform: rotate(90deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.showLeft {
+  -webkit-animation: showLeft 0.3s ease;
+          animation: showLeft 0.3s ease;
+  left: 0;
+}
+
+@-webkit-keyframes showLeft {
+  0% {
+    left: -30rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes showLeft {
+  0% {
+    left: -30rem;
+  }
+  100% {
+    left: 0;
+  }
+}
+.hideLeft {
+  -webkit-animation: hideLeft 0.3s ease;
+          animation: hideLeft 0.3s ease;
+  left: -30rem;
+}
+
+@-webkit-keyframes hideLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -30rem;
+  }
+}
+
+@keyframes hideLeft {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: -30rem;
+  }
+}
+.appear {
+  -webkit-animation: appear 0.2s ease-in;
+          animation: appear 0.2s ease-in;
+  opacity: 1;
+}
+
+@-webkit-keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.disappear {
+  -webkit-animation: disappear 0.2s ease-out;
+          animation: disappear 0.2s ease-out;
+  opacity: 0;
+  z-index: -1 !important;
+}
+
+@-webkit-keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes disappear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.opaque {
+  -webkit-animation: opaque 0.5s ease-in;
+          animation: opaque 0.5s ease-in;
+  background-color: #0A0C09;
+}
+
+@-webkit-keyframes opaque {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #0A0C09;
+  }
+}
+
+@keyframes opaque {
+  0% {
+    background-color: transparent;
+  }
+  100% {
+    background-color: #0A0C09;
+  }
+}
+.transparence {
+  -webkit-animation: transparence 0.5s ease-out;
+          animation: transparence 0.5s ease-out;
+  background-color: transparent;
+}
+
+@-webkit-keyframes transparence {
+  0% {
+    background-color: #0A0C09;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+
+@keyframes transparence {
+  0% {
+    background-color: #0A0C09;
+  }
+  100% {
+    background-color: transparent;
+  }
+}
+.loader-wrapper {
+  z-index: 1002;
+  background-color: #F2EFEA;
+}
+
+.loader {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loader div {
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 3px solid #0A0C09;
+  border-radius: 50%;
+  -webkit-animation: ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #0A0C09 transparent transparent transparent;
+}
+
+.loader div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.loader div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.loader div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color: #0A0C09;
+  font-size: 12px;
+  font-family: "Roboto Slap", sans-serif;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+body {
+  position: relative;
+}
+
+h3, p {
+  font-size: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+input,
+textarea {
+  outline: none;
+  font-family: "Roboto Slab", sans-serif;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.bold {
+  font-weight: 700;
+}
+
+.wrapper {
+  position: relative;
+  padding: 9em 3rem 0 3rem;
+}
+
+.wrapper-title {
+  font-size: 4.5rem;
+  padding-bottom: 3rem;
+}
+
+.footer {
+  padding: 3rem;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+}
+
+.view {
+  max-width: 100vw;
+  height: 100vh;
+}
+
+.flex-align {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.absolute-align {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: #0A0C09;
+}
+.button:hover {
+  color: #849b79;
+}
+.button:active {
+  color: #22291f;
+}
+
+/*# sourceMappingURL=main.css.map*/

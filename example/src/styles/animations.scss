@@ -1,0 +1,80 @@
+.rotateRight {
+    animation: rotateRight 0.3s ease;
+    transform: rotate(90deg);
+}
+
+@keyframes rotateRight {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(90deg); }
+}
+
+.unrotateRight {
+    animation: unrotateRight 0.3s ease;
+    transform: rotate(0deg);
+}
+
+@keyframes unrotateRight {
+    0% { transform: rotate(90deg); }
+    100% { transform: rotate(0deg); }
+}
+
+.showLeft {
+    animation: showLeft 0.3s ease;
+    left: 0;
+}
+
+@keyframes showLeft {
+    0% { left: -$fixed-size; }
+    100% { left: 0; }
+}
+
+.hideLeft {
+    animation: hideLeft 0.3s ease;
+    left: -$fixed-size;
+}
+
+@keyframes hideLeft {
+    0% { left: 0; }
+    100% { left: -$fixed-size; }
+}
+
+.appear {
+    animation: appear 0.2s ease-in;
+    opacity: 1;
+}
+
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.disappear {
+    animation: disappear 0.2s ease-out;
+    opacity: 0;
+    z-index: -1 !important;
+}
+
+@keyframes disappear {
+    0% { opacity: 1; }
+    100% { opacity: 0; }
+}
+
+.opaque {
+    animation: opaque 0.5s ease-in;
+    background-color: $black;
+}
+
+@keyframes opaque {
+    0% { background-color: transparent; }
+    100% { background-color: $black; }
+}
+
+.transparence {
+    animation: transparence 0.5s ease-out;
+    background-color: transparent;
+}
+
+@keyframes transparence {
+    0% { background-color: $black; }
+    100% { background-color: transparent; }
+}

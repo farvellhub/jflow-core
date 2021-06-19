@@ -108,3 +108,4 @@ dist
 lib/
 *.code-workspace
 *.txt
+package/

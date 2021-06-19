@@ -20,7 +20,7 @@ class Scroll {
             || ( this.#scroll >= this.#offset && !this.#isActive ));
     }
 
-    async listen( ...states: State[]): Promise<void> {
+    async listen( states: State[]): Promise<void> {
         document.addEventListener( "scroll", () => {
             if ( this.controlScroll()) {
                 states.forEach(( state ) => {

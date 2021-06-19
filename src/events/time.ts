@@ -2,7 +2,7 @@ import State from "../animations/state";
 
 class Time {
     #time: number;
-    #interval: NodeJS.Timeout;
+    #interval!: NodeJS.Timeout;
 
     constructor( time: number ) {
         this.#time = time;

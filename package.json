@@ -1,7 +1,7 @@
 {
     "name": "@farvell/jflow-core",
     "version": "3.0.1",
-    "description": "npm package that exports jflow-core library",
+    "description": "Jflow-core library for animate the web.",
     "author": "Farvell",
     "license": "MIT",
     "repository": {

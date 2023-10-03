@@ -1,11 +1,11 @@
 import Click from "./click";
-import Handler from "./handler";
+import Parallax from "./parallax";
 import Scroll from "./scroll";
 import Time from "./time";
 
 export {
     Click,
-    Handler,
+    Parallax,
     Scroll,
     Time
 };

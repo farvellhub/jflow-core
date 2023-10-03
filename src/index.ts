@@ -1,11 +1,12 @@
-import { Parallax, State, Style } from "./animations";
-import { Handler, Scroll, Time } from "./events";
+import { Handler, State, Style } from "./core";
+import { Click, Parallax, Scroll, Time } from "./events";
 
 export {
+    Click,
+    Handler,
     Parallax,
+    Scroll,
     State,
     Style,
-    Handler,
-    Scroll,
     Time
 };

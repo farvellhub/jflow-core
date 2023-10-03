@@ -1,17 +1,17 @@
-import State from "../animations/state";
+import { State } from "../core";
 
 class Click {
     keys: Element[];
 
-    constructor( target: string ) {
-        this.keys = [ ...document.querySelectorAll( `.${target}` ) ];
+    constructor(target: string) {
+        this.keys = [...document.querySelectorAll(`.${target}`)];
     }
 
-    async listen( states: State[]): Promise<void> {
-        this.keys.forEach(( trigger: Element ) => {
-            trigger.addEventListener( "click", ( e ) => {
+    public listen(states: State[]) {
+        this.keys.forEach((trigger: Element) => {
+            trigger.addEventListener("click", (e) => {
                 e.stopPropagation();
-                states.forEach(( state ) => {
+                states.forEach((state) => {
                     state.toggleStates();
                 });
             });

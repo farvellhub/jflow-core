@@ -1,31 +1,32 @@
-import State from "../animations/state";
+import { State } from "../core/";
 
+// Animate over time.
 class Time {
     #time: number;
-    #interval!: NodeJS.Timeout;
+    #interval: number;
 
-    constructor( time: number ) {
+    constructor(time: number) {
         this.#time = time;
     }
 
-    async once( states: State[]): Promise<void> {
+    public async once(states: State[]) {
         setTimeout(() => {
-            states.forEach(( state ) => {
+            states.forEach((state) => {
                 state.toggleStates();
             });
-        }, this.#time );
+        }, this.#time);
     }
 
-    async loop( ...states: State[]): Promise<void> {
+    public loop(states: State[]) {
         this.#interval = setInterval(() => {
-            states.forEach(( state ) => {
+            states.forEach((state) => {
                 state.toggleStates();
             });
-        }, this.#time );
+        }, this.#time);
     }
 
-    async clearLoop(): Promise<void> {
-        clearInterval( this.#interval );
+    public clearLoop() {
+        clearInterval(this.#interval);
     }
 }
 

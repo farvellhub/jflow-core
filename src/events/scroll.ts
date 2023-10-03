@@ -1,5 +1,6 @@
-import State from "../animations/state";
+import State from "../core/state";
 
+// Animate over scroll.
 class Scroll {
     #offset: number;
     #scroll: number;
@@ -20,7 +21,7 @@ class Scroll {
             || ( this.#scroll >= this.#offset && !this.#isActive ));
     }
 
-    async listen( states: State[]): Promise<void> {
+    public listen( states: State[]) {
         document.addEventListener( "scroll", () => {
             if ( this.controlScroll()) {
                 states.forEach(( state ) => {

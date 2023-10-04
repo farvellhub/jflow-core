@@ -1,4 +1,3 @@
-// Trigger animation state
 export default class State {
     #element: HTMLElement;
     #states: string[];
@@ -35,9 +34,3 @@ export default class State {
         });
     }
 }
-
-//     new State({
-//         element: "animable",
-//         css: ["stateOn", "stateOff"],
-//         init: 0
-//     })

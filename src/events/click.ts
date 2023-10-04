@@ -20,15 +20,3 @@ class Click {
 }
 
 export default Click;
-
-// new Click("target").listen(
-//     new State({
-//         element: "animable",
-//         classes: ["stateOn", "stateOff"],
-//         init: 0
-//     }),
-//     new State({
-//         element: "other-animable",
-//         classes: "uniqueState",
-//     })
-// ).then(() => console.log("finished trigger"));

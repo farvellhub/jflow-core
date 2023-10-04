@@ -1,6 +1,5 @@
 import State from "../core/state";
 
-// Animate over scroll.
 class Scroll {
     #offset: number;
     #scroll: number;

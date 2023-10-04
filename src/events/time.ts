@@ -1,6 +1,5 @@
 import { State } from "../core/";
 
-// Animate over time.
 class Time {
     #time: number;
     #interval: number;
@@ -31,18 +30,3 @@ class Time {
 }
 
 export default Time;
-
-// new Time( 1200 ).once(
-//     new State({
-//         element: "animable",
-//         classes: "stateOn"
-//     })
-// ).then(() => console.log("finished trigger"));
-
-// new Time( 1000 ).loop(
-//     new State({
-//         element: "animable",
-//         classes: ["stateOn", "stateOff"],
-//         init: 0
-//     })
-// ).then(() => console.log("finished trigger"));

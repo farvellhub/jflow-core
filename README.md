@@ -7,7 +7,7 @@
 <a href="https://discord.gg/tpNtcJHw" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
 </p>
 
-> Style elements, Handle events, Parallax aniamtions.
+> Style elements, Handle events, Parallax animations.
 
 ## Installation
 
